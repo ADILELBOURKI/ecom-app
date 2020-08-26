@@ -44,8 +44,18 @@ class Wrapper extends React.Component {
   render() {
     return (
       <div className="menu-wrapper">
-        {this.state.sections.map(({ id, title, imageUrl }) => {
-          return <MenuItem key={id} title={title} imageUrl={imageUrl} />;
+        {this.state.sections.map(({ id, title, imageUrl, linkUrl }) => {
+          {
+            /* (id , ...otherSectionsProps)*/
+          }
+          return (
+            <MenuItem
+              key={id}
+              title={title} /* ({...otherSectionsProps}*/
+              imageUrl={imageUrl}
+              linkUrl={linkUrl}
+            />
+          );
         })}
       </div>
     );
